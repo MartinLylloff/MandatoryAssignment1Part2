@@ -1,0 +1,118 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style> .cards-alike{
+    padding-left: 20px;
+}
+    .background-yellow-grad {
+        background-image: linear-gradient(to bottom, #fff387, white);
+    }
+</style>
+
+<body>
+    <div class="background-yellow-grad">
+        <div class="jumbotron jumbotron-fluid top-container">
+            <h1>Anders Børjesson</h1>
+            <a href="https://www.zealand.dk/">Erhvervsakademi Sjælland </a> |
+                    <a href="https://anbo-easj.dk/cv/">CV</a>
+            <div class="row justify-content-around" style="padding-top: 20px">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-12">
+                            Address (work): Maglegårdsvej 2, 4000 Roskilde
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            E-mail (work): anbo(at)zealand.dk
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <img src="~/Anders.png" class="photo" id="img1"/>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    Anders Børjesson (anbo)
+                    Cand.scient. i matematik og datalogi
+                    Lektor på Datamatikeruddannelsen
+                    Zealand, Sjællands Erhvervsakademi, Roskilde
+                </div>
+            </div>
+        </div>
+        <div class="row proper-view">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <h3>Teaching autumn 2019</h3>
+                <ul>
+                    <li><a href="https://docs.google.com/document/d/e/2PACX-1vS3CeBX7CMTl-fgsbH7jXNKTDNGhJWm8JDDbdqfKBqzw7lqQ2Qbd-F07nP7PvDi3ioPvR5QQl2gdvhS/pub">Programming 3sem</a>- Datamatiker</li>
+                    <li><a href="https://docs.google.com/document/d/e/2PACX-1vQSdR7ZSr7DfFCc8SC0tSqz8VaLKHN8LCGRmfxTFVnl1GgkHnk_Wr_-7r_Lr5EX-qpOt7sBzo6SmHH0/pub">Mobile Application Development</a>, 4th semester Comp Science</li>
+                    <li><a href="https://anbo-easj.dk/internship/index.html">Internships</a>, 5th semester, Comp Science</li>
+                    <li><a href="https://anbo-easj.dk/dissertation2020spring/">Dissertation cours</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <h3>Teaching spring 2019</h3>
+                <ul>
+                    <li><a href="https://anbo-easj.dk/mobile2019spring/index.html">Mobile Application Development</a>, 4th semester Comp Science</li>
+                    <li><a href="https://anbo-easj.dk/internship/index.html">Internships</a>, 5th semester, Comp Science</li>
+                    <li><a href="https://anbo-easj.dk/dissertation2020spring/">Dissertation course</a></li>
+                    <li>Dissertations, Computer Science</li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <h3>Teaching autumn 2018</h3>
+                <ul>
+                    <li><a href="https://anbo-easj.dk/prog3_2018autumn/index.html">Programming, 3rd semester, Comp Science</a></li>
+                    <li><a href="https://anbo-easj.dk/mobile2018autumn/index.html">Mobile Application Development</a>, 4th semester Comp Science</li>
+                    <li><a href="https://anbo-easj.dk/internship/index.html">Internships</a></li>
+                    <li><a href="https://anbo-easj.dk/dissertation2020spring/">Dissertation course</a></li>
+                    <li>Dissertations, Computer Science</li>
+                    <li>https://anbo-easj.dk/undervisning/</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<footer class="border-top footer text-muted footer-correct" >
+    <div class="row row-correct">
+        <div class="col-lg-3 col-md-12"><a href="https://anbo-easj.dk/index.htm"> Index: Original side</a></div>
+        <div class="col-lg-3 col-md-12"><a href="https://docs.microsoft.com/da-dk/docs/">MSDN Library: Intro. til prog. mv.</a></div>
+        <div class="col-lg-3 col-md-12"><a href="https://docs.microsoft.com/da-dk/">Microsoft Developer Network</a></div>
+        <div class="col-lg-3 col-md-12"><a href="https://anbo-easj.dk/bekendtgoerelser/"> Bekendtgørelser</a></div>
+    </div>
+</footer>
+
+
+    <script>
+        // Get the img object using its Id
+        let clicked = true;
+        img = document.getElementById("img1").addEventListener("click", function(){
+            if(clicked){
+                enlargeImg();
+            }
+            else resetImg();
+        })
+
+        document.getElementById("img1").addEventListener("mouseover", function () {
+            document.getElementById("img1").style.transform = "scale(1.5)";
+            document.getElementById("img1").style.transition = "transform 0.25s ease";}
+        );
+        document.getElementById("img1").addEventListener("mouseleave", resetImg);
+        
+        // Function to increase image size
+        function enlargeImg() {
+            clicked = false;
+            document.getElementById("img1").style.transform = "scale(3)";
+            document.getElementById("img1").style.transition = "transform 0.25s ease";
+        }
+        // Function to reset image size
+        function resetImg() {
+            // Set image size to original
+            clicked = true;
+            document.getElementById("img1").style.transform = "scale(1)";
+            document.getElementById("img1").style.transition = "transform 0.25s ease";
+        }
+    </script>
+</body>
+
+
